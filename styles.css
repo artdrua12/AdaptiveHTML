@@ -1,0 +1,226 @@
+.wraper {
+  display: grid;
+  width: 1170px;
+  margin: auto;
+  grid-template-columns: 210px 1fr auto auto;
+  grid-template-rows: minmax(20px, 1fr) 70px;
+  grid-gap: 22px 30px;
+  grid-template-areas:
+    "logo   topMenu   topMenu topMenu"
+    "logo   banner card  contacts"
+    "logo-text . .  contact-text"
+    "mainMenu   mainMenu   mainMenu mainMenu";
+}
+.logo {
+  grid-area: logo;
+  background-color: #ffcc00;
+  padding: 15px 0 11px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-text {
+  grid-area: logo-text;
+  font-family: "HeliosCond";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  position: relative;
+  top: -15px;
+  height: 10px;
+}
+.topMenu {
+  grid-area: topMenu;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  border-bottom: 1px solid #d7d7d7;
+}
+.topMenu-text {
+  margin-left: auto;
+  padding-right: 22px;
+  border-right: 1px solid;
+}
+.banner {
+  grid-area: banner;
+  background-color: #e2e2e2;
+}
+.card {
+  grid-area: card;
+  display: flex;
+  gap: 15px;
+  margin-right: 20px;
+}
+.card-link {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  grid-column-gap: 9px;
+  align-items: center;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  letter-spacing: -0.01em;
+  text-decoration-line: underline;
+
+  color: #252525;
+}
+.card-bye {
+  font-size: 14px;
+  line-height: 16px;
+}
+.card-margin {
+  margin-right: 11px;
+}
+.contacts {
+  grid-area: contacts;
+  border-bottom: 1px solid #d7d7d7;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  letter-spacing: -0.01em;
+}
+.contacts-timename {
+  font-weight: 700;
+}
+.contacts-time {
+  font-weight: 400;
+  justify-self: end;
+}
+.contacts-phone {
+  grid-column: 1/-1;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 29px;
+  letter-spacing: -0.02em;
+}
+.contacts-text {
+  grid-area: contact-text;
+  position: relative;
+  top: -17px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  /* identical to box height */
+
+  letter-spacing: -0.01em;
+}
+.mainMenu {
+  grid-area: mainMenu;
+  background-color: #252525;
+  border-radius: 14px;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+}
+.mainMenu-button:first-child {
+  border-radius: 14px 0 0 14px;
+}
+.mainMenu-button:last-child {
+  border-radius: 0 14px 14px 0;
+}
+.mainMenu-button {
+  padding: 0px 20px;
+  height: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 34px;
+}
+.mainMenu-active {
+  background-color: #ffcc00;
+  color: #252525;
+}
+.mainMenu-notactive {
+  color: #ffffff;
+  background-color: #252525;
+}
+
+.margin--auto {
+  margin: auto;
+  display: inline-block;
+}
+
+span {
+  cursor: pointer;
+}
+
+@media (max-width: 1170px) {
+  .wraper {
+    max-width: 900px;
+    width: auto;
+    margin: auto;
+    padding: 0px 10px;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "topMenu   topMenu  "
+      "logo   banner "
+      "logo   banner "
+      "card  contacts"
+      "logo-text   contact-text"
+      "mainMenu   mainMenu   "
+      "mainMenu   mainMenu   ";
+  }
+  .mainMenu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    height: auto;
+    border-radius: 0;
+  }
+
+  .mainMenu-button:first-child {
+    border-radius: 0 0 0 0;
+  }
+  .mainMenu-button:last-child {
+    border-radius: 0 0 0 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .wraper {
+    width: auto;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "topMenu  "
+      "logo   "
+      "  banner "
+      "card  "
+      "logo-text   "
+      "contacts"
+      "contact-text"
+      "mainMenu     ";
+  }
+  .card {
+    margin-right: 0px;
+  }
+  .mainMenu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    height: auto;
+    border-radius: 0;
+  }
+
+  .mainMenu-button:first-child {
+    border-radius: 0 0 0 0;
+  }
+  .mainMenu-button:last-child {
+    border-radius: 0 0 0 0;
+  }
+}
