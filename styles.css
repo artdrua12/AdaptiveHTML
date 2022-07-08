@@ -133,17 +133,17 @@
 .mainMenu {
   grid-area: mainMenu;
   background-color: #252525;
-  border-radius: 15px;
+  border-radius: 14px;
   height: 34px;
   display: flex;
   justify-content: space-between;
 }
 .mainMenu-button:first-child {
-  border-radius: 14px 0 0 14px;
+  border-radius: 12px 0 0 12px;
   padding: 0px 7px 0px 8px
 }
 .mainMenu-button:last-child {
-  border-radius: 0 14px 14px 0;
+  border-radius: 0 12px 12px 0;
   padding: 0px 15px 0px 14px;
   text-transform: uppercase;
 }
